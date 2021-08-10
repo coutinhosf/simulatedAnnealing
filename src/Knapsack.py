@@ -39,13 +39,17 @@ class Knapsack:
         self.calcula_peso_mochila(items)
         self.calcula_valor_itens_mochila(items)
 
-    def imprimir(self, totalIteracoes, items: Item):
+    def imprimir(self, totalIteracoes, items: Item, pertubacao:int, temperatura):
         print('Iteracao: ' + str(totalIteracoes))
         print('MelhorSolucao:{ ')
         print(' | '.join(str(p) for p in self.mochila))
         print('}')
+        print('{')
+        print(' Temperatura: ' + str(temperatura))
+        print(' pertubacao: ' + str(pertubacao))
+        print('}')
         print('Itens - { ')
-        print('Peso e Valor: ', end='|')
+        print(' Peso e Valor: ', end='|')
         for i in range(len(items)):
             if self.mochila[i]:
                 print(' ' + str(items[i].getPeso()) + ' ' + str(items[i].getValor()), end=' |')

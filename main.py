@@ -12,10 +12,10 @@ if __name__ == '__main__':
 
     temperaturaInicial = 100
     temperaturaFinal = 1
-    fatorReducaoTemperatura = 0.8
+    fatorReducaoTemperatura = 0.9
     totalPertubacoes = 5
 
-    iteracoes = 10
+    iteracoes = 100
 
     itens = []
     for i in range(numeroItens):
@@ -30,4 +30,4 @@ if __name__ == '__main__':
 
     melhorIteracao = copy.deepcopy(resultado[1])
     print(' ----- MELHOR SOLUCAO -----')
-    resultado[0].imprimir(melhorIteracao, itens)
+    resultado[0].imprimir(melhorIteracao, itens, resultado[3], resultado[2])

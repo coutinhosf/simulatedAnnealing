@@ -48,14 +48,16 @@ def simulated_annealing(mochila: Knapsack, iteracoes, temperaturaAtual, temperat
                 if capacidade > mochilaAlternativa.pesoMochila:
                     mochila = copy.deepcopy(mochilaAlternativa)
                     if mochila.valorSolucao > melhorMochila.valorSolucao:
-                            melhorMochila = copy.deepcopy(mochila)
-                            melhoriteracao = totalIteracoes
+                        melhorMochila = copy.deepcopy(mochila)
+                        melhoriteracao = totalIteracoes
+                        itemPertubacao = totalPertubacoes
+                        melhorTemperatura = temperaturaAtual
 
+            mochila.imprimir(totalIteracoes, items, totalPertubacoes, temperaturaAtual)
             mochilaAlternativa = pertubacao(mochila)
             mochilaAlternativa.calculaMochila(items)
 
         totalPertubacoes = 0
-        mochila.imprimir(totalIteracoes, items)
         temperaturaAtual = fatorReducao * temperaturaAtual
 
-    return [melhorMochila , melhoriteracao]
+    return [melhorMochila, melhoriteracao, itemPertubacao, melhorTemperatura]
