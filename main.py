@@ -30,4 +30,4 @@ if __name__ == '__main__':
 
     melhorIteracao = copy.deepcopy(resultado[1])
     print(' ----- MELHOR SOLUCAO -----')
-    resultado[0].imprimir(melhorIteracao, itens, resultado[3], resultado[2])
+    resultado[0].imprimir(melhorIteracao, itens, resultado[2], resultado[3])
